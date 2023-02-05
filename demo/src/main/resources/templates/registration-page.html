@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Registration Page</title>
+
+    <!-- Icons font CSS-->
+    <link rel="stylesheet" href="" th:href="@{https://use.fontawesome.com/releases/v5.15.1/css/all.css}" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link href="" th:href="@{/vendor/mdi-font/css/material-design-iconic-font.min.css}" rel="stylesheet" media="all">
+    <link href="" th:href="@{/vendor/font-awesome-4.7/css/font-awesome.min.css}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="" th:href="@{/vendor/select2/select2.min.css}" rel="stylesheet" media="all">
+    <link href="" th:href="@{/vendor/datepicker/daterangepicker.css}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="" th:href="@{/css/main.css}" rel="stylesheet" media="all">
+</head>
+
+<body>
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w680">
+        <div class="card card-4">
+            <div class="card-body">
+                <h2 class="title">Registration Form</h2>
+                <form th:action="@{/register/save}" method="POST" th:object="${user}">
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">first name</label>
+                                <input class="input--style-4" type="text" name="first_name" required>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">last name</label>
+                                <input class="input--style-4" type="text" name="last_name" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Full Name</label>
+                                <div class="input-group-icon">
+                                    <input class="input--style-4" type="text" name="full_name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Gender</label>
+                                <div class="p-t-10">
+                                    <label class="radio-container m-r-45">Male
+                                        <input type="radio" name="gender" value="Male" required>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">Female
+                                        <input type="radio" name="gender" value="Female" required>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Email</label>
+                                <input class="input--style-4" type="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Phone Number</label>
+                                <input class="input--style-4" type="text" name="phone" id="phoneNumber" required>
+                                <div id="errorMessage"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label">Departmet</label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <select required name="department" >
+                                <option disabled="disabled" selected="selected" >Choose Department</option>
+                                <option>Student</option>
+                                <option>Employee</option>
+                                <option>Manager</option>
+                            </select>
+                            <div class="select-dropdown"></div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-group">
+                            <label for="passwordInput">
+                                <i class="fas fa-lock" id="passwordIcon"></i>
+                                Password:
+                            </label>
+                            <input class="input--style-4" type="password"  id="passwordInput" name="password" required>
+                            <button class="input--style-4" type="button" id="showPasswordButton">show</button>
+                        </div>
+                    </div>
+                    <div class="p-t-15">
+                        <button class="btn btn--radius-2 btn--blue" id="submitBtn" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Jquery JS-->
+<script src="" th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<!-- Vendor JS-->
+<script src="" th:src="@{/vendor/select2/select2.min.js}"></script>
+<script src="" th:src="@{/vendor/datepicker/moment.min.js}"></script>
+<script src="" th:src="@{/vendor/datepicker/daterangepicker.js}"></script>
+
+<!-- Main JS-->
+<script src="" th:src="@{/js/global.js}"></script>
+
+</body>
+
+</html>
